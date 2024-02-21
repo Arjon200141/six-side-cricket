@@ -3,3 +3,8 @@
 .font-noto{
     font-family: "Noto Sans", sans-serif;
 }
+.selected-players{
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}
