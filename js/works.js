@@ -17,6 +17,32 @@ for(let btn of allBtn)
         const div = document.createElement('div');
         div.classList.add('selected-players')
 
+        
+        //Limit
+        const cartCount = getConvertedValue('cart-count');
+        if(cartCount + 1 > 6)
+        {
+            alert('You have exceeded your limit');
+            return;
+        }
+
+        //Disabled
+        event.target.setAttribute('disabled' , true);
+        event.target.parentNode.parentNode.style.backgroundColor = 'gray'
+
+
+        //Budget Count
+        const budget = getConvertedValue('budget')
+        document.getElementById('budget').innerText = budget - parseInt(price);
+       
+        //Cart Count
+        const cart = getConvertedValue('cart-count')
+        document.getElementById('cart-count').innerText = cart+1;
+        
+        //Left Count
+        const left = getConvertedValue('left-count')
+        document.getElementById('left-count').innerText = left-1;
+
         const p1 = document.createElement('p')
         const p2 = document.createElement('p')
         const p3 = document.createElement('p')
