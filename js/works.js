@@ -4,6 +4,7 @@ function getConvertedValue(id){
     return convertedValue;
 }
 
+//Append Selected Players
 const allBtn = document.getElementsByClassName('add-btn');
 for(let btn of allBtn)
 {
@@ -29,5 +30,37 @@ for(let btn of allBtn)
         div.appendChild(p3);
 
         selectPlayers.appendChild(div);
+        updatedTotalCost(price);
+        updatedGrandTotal();
     })
 }
+
+//Total Cost
+function updatedTotalCost(value){
+    const totalCost = getConvertedValue('total-cost');
+    const sum = totalCost + parseInt(value);
+    document.getElementById('total-cost').innerText = sum;
+}
+
+//Grand Total
+function updatedGrandTotal(status){
+    let totalCost = getConvertedValue('total-cost');
+    if(status == undefined){
+        document.getElementById('grand-total').innerText = totalCost;
+    }
+    else{
+        const couponCode =  document.getElementById('coupon-input').value;
+        
+        if(couponCode == 'player420')
+        {
+            const discount = totalCost * 0.2;
+            totalCost = totalCost - discount;
+            document.getElementById('grand-total').innerText = totalCost;
+        }
+        else{
+            alert('Please Enter Valid Coupon Code');
+        }
+    }
+}
+
+

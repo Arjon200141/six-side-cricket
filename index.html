@@ -141,17 +141,17 @@
         <hr>
         <div class="flex justify-around text-xl font-semibold">
             <div>Total Cost</div>
-            <div><span>0</span>$</div>
+            <div><span id="total-cost">0</span>$</div>
         </div>
         <hr>
         <div class="pl-12 ">
             <input type="text" placeholder="Coupon Code" name="" id="coupon-input" class="p-2 border-2 h-12 border-solid">
-            <button class="btn h-4">Apply</button>
+            <button onclick="updatedGrandTotal('apply-btn')" id="apply-coupon" class="btn h-4">Apply</button>
         </div>
         <hr>
         <div class="flex justify-around text-xl font-semibold">
             <div>Grand Total</div>
-            <div><span>0</span>$</div>
+            <div><span id="grand-total">0</span>$</div>
         </div>
     </div>
    </div>
